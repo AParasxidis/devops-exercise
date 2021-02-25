@@ -20,8 +20,8 @@ jobs:
         run: docker build -t hello-world-app .
       - name: Tags
         run: |
-          docker tag hello-world-app ${{ secrets.DOCKER_USER }}/back:${{ github.sha }}
-          docker tag hello-world-app ${{ secrets.DOCKER_USER }}/back:latest
+          docker tag hello-world-app ${{ secrets.DOCKER_USER }}/hello-world-app:${{ github.sha }}
+          docker tag hello-world-app ${{ secrets.DOCKER_USER }}/hello-world-app:latest
       - name: Push
         run: |
           docker push ${{ secrets.DOCKER_USER }}/hello-world-app:${{ github.sha }}
